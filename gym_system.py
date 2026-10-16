@@ -31,9 +31,9 @@ def addMembers(class_name, count):
     for i in range(count):
         book_class("GUEST-" + str(i), class_name)
 
-def export_roster(file="gym_schedule.json"):
-    f = open(file, "w")
-    json.dump(rosters, f)
+def export_roster(filepath="gym_schedule.json"):
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(rosters, f)
 
 def clear_old_exports(prefix="old_"):
     for file_path in glob.glob(prefix + "*.json"):
