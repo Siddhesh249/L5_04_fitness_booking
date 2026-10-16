@@ -1,3 +1,4 @@
+import glob
 import json
 import os
 
@@ -33,7 +34,11 @@ def export_roster(file="gym_schedule.json"):
     json.dump(rosters, f)
 
 def clear_old_exports(prefix="old_"):
-    os.system("rm -f " + prefix + "*.json")
+    for file_path in glob.glob(prefix + "*.json"):
+        try:
+            os.remove(file_path)
+        except OSError:
+            pass
 
 def show_rosters():
     for c in rosters:
