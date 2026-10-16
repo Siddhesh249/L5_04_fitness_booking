@@ -27,7 +27,7 @@ def cancel_booking(member_id, class_name):
 def set_capacity(class_name, seats):
     class_capacity[class_name] = seats
 
-def addMembers(class_name, count):
+def add_members(class_name, count):
     for i in range(count):
         book_class("GUEST-" + str(i), class_name)
 
@@ -54,10 +54,10 @@ def main():
     book_class(55, "HIIT")
     book_class("M5", "Pilates")
     set_capacity("Spin", -2)
-    addMembers("Spin", 3)
+    add_members("Spin", 3)
     cancel_booking("M9", "Boxing")
     n = input("How many walk-in guests for HIIT? (Enter for 1): ") or "1"
-    addMembers("HIIT", int(n))
+    add_members("HIIT", int(n))
     clear_old_exports()
     export_roster()
     show_rosters()
