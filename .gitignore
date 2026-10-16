@@ -1,4 +1,7 @@
 __pycache__/
 .venv/
-lab5/
+.lab5/
 gym_schedule.json
+pylint_report.txt
+flake8_report.txt
+bandit_report.txt
